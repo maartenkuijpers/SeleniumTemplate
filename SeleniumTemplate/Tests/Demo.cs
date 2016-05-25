@@ -1,9 +1,7 @@
 ﻿using FluentAssertions;
 using NUnit.Framework;
 using SeleniumTestTemplate.Business;
-using SeleniumTestTemplate.Const;
 using SeleniumTestTemplate.Enums;
-using SeleniumTestTemplate.Helpers;
 using SeleniumTestTemplate.PageObjects;
 
 namespace SeleniumTestTemplate.Tests
