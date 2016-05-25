@@ -2,6 +2,7 @@
 using System.Configuration;
 using System.Threading;
 using OpenQA.Selenium;
+using SeleniumTestTemplate.Const;
 using SeleniumTestTemplate.Enums;
 using SeleniumTestTemplate.Extensions;
 using SeleniumTestTemplate.Helpers;

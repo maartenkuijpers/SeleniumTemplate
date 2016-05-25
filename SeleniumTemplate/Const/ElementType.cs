@@ -1,4 +1,4 @@
-﻿namespace SeleniumTestTemplate.Helpers
+﻿namespace SeleniumTestTemplate.Const
 {
     public static class ElementType
     {

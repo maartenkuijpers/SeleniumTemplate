@@ -1,4 +1,4 @@
-﻿namespace SeleniumTestTemplate.Helpers
+﻿namespace SeleniumTestTemplate.Const
 {
     public static class AttributeType
     {
@@ -15,5 +15,8 @@
         public const string InnerHtml = "innerHTML";
         public const string DataHeight = "data-height";
         public const string Height = "height";
+        public const string Placeholder = "placeholder";
+        public const string DataValMsgFor = "data-valmsg-for";
+        public const string DataAnchor = "data-anchor";
     }
 }

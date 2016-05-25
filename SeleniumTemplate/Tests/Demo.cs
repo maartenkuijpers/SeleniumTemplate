@@ -1,8 +1,10 @@
 ﻿using FluentAssertions;
 using NUnit.Framework;
 using SeleniumTestTemplate.Business;
+using SeleniumTestTemplate.Const;
 using SeleniumTestTemplate.Enums;
 using SeleniumTestTemplate.Helpers;
+using SeleniumTestTemplate.PageObjects;
 
 namespace SeleniumTestTemplate.Tests
 {
@@ -14,12 +16,12 @@ namespace SeleniumTestTemplate.Tests
         private Devices _device;
         public Demo()
         {
-            this._device = Devices.Desktop;
+            _device = Devices.Desktop;
         }
 
         public Demo(Devices device)
         {
-            this._device = device;
+            _device = device;
         }
 
         private const string Url = "/";
@@ -39,12 +41,12 @@ namespace SeleniumTestTemplate.Tests
         [Test]
         public void SearchOnGoogle()
         {
-            Goto(Url);
-            Driver.GetElementByAttribute(ElementType.Input, AttributeType.Class, "gsfi").SendKeys("Selenium tests");
-            Driver.GetElementByAttribute(ElementType.Button, AttributeType.Class, "lsb").Click();
+            Goto(Url); // see app.config for domain
+            var page = new GoogleSearchPage(Driver, _device);
+            page.SearchFor("Selenium tests");
 
             const int expectedResult = 5;
-            int actualResult = Driver.GetElementsByAttribute(ElementType.Li, AttributeType.Class, "g").Count;
+            var actualResult = page.CountSearchResults();
 
             actualResult.Should().BeGreaterOrEqualTo(expectedResult);
         }
